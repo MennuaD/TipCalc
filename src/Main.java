@@ -8,6 +8,7 @@ public class Main {
         double bill;
         int numPeople;
         double percent;
+        double totalPPerson;
         Scanner all = new Scanner(System.in);
         System.out.print("What is the total bill: ");
         bill = all.nextDouble();
@@ -27,6 +28,7 @@ public class Main {
         double tipPPerson = tip / numPeople;
         tipPPerson = Math.round(tipPPerson * 100);
         tipPPerson = tipPPerson / 100;//rounds tipPPerson
+        totalPPerson = Math.round((bill/numPeople) + tipPPerson);
 
         DecimalFormat format = new DecimalFormat("###,###,###,###,###.##");
         format.setDecimalSeparatorAlwaysShown(true);
@@ -42,6 +44,7 @@ public class Main {
         System.out.println("Tip: " + (format.format(tip)));
         System.out.print("Tip per person: " );
         System.out.println(format.format(tipPPerson));
+        System.out.println("Total for each person: " + (format.format(totalPPerson)));
         System.out.println("------------------------");
 
 
